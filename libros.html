@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Libros sugeridos | Buenas Nuevas 72</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+
+  <!-- Estilos locales por si tu CSS general todavía no tiene “cards” -->
+  <style>
+    :root{
+      --bn72-purple:#5a2a82;
+      --bn72-purple-2:#7a3bb0;
+      --bn72-bg:#0f0716;
+      --bn72-card:#160a22;
+      --bn72-border:rgba(255,255,255,.10);
+      --bn72-text:rgba(255,255,255,.92);
+      --bn72-muted:rgba(255,255,255,.72);
+    }
+    body{ background: radial-gradient(1200px 600px at 20% 10%, rgba(122,59,176,.25), transparent 60%), var(--bn72-bg); color:var(--bn72-text); }
+    .container{ max-width: 1050px; margin: 0 auto; padding: 24px 16px 60px; }
+    header h1{ margin: 0 0 6px; font-size: 2rem; }
+    header p{ margin: 0; color: var(--bn72-muted); }
+    .toolbar{
+      margin: 18px 0 18px;
+      padding: 14px;
+      background: linear-gradient(180deg, rgba(90,42,130,.25), rgba(90,42,130,.10));
+      border: 1px solid var(--bn72-border);
+      border-radius: 14px;
+    }
+    .toolbar a{ color: #fff; }
+    .grid{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+    @media (min-width: 820px){
+      .grid{ grid-template-columns: 1fr 1fr; }
+    }
+    .card{
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 14px;
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border: 1px solid var(--bn72-border);
+      border-radius: 16px;
+      padding: 14px;
+      align-items: start;
+    }
+    .cover{
+      width: 92px; height: 128px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,.15);
+      object-fit: cover;
+      background: rgba(255,255,255,.06);
+    }
+    .meta h3{ margin: 0 0 6px; font-size: 1.05rem; line-height: 1.2; }
+    .meta .author{ margin: 0 0 10px; color: var(--bn72-muted); font-size: .95rem; }
+    .meta .desc{ margin: 0 0 12px; color: var(--bn72-text); font-size: .95rem; }
+    .pill{
+      display:inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: .78rem;
+      border: 1px solid rgba(255,255,255,.14);
+      color: var(--bn72-muted);
+      margin: 0 8px 10px 0;
+      background: rgba(90,42,130,.18);
+    }
+    .actions{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .btn{
+      display:inline-block;
+      padding: 9px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.18);
+      text-decoration:none;
+      color:#fff;
+      background: rgba(90,42,130,.35);
+    }
+    .btn:hover{ background: rgba(122,59,176,.45); }
+    .btn.secondary{ background: rgba(255,255,255,.06); }
+    footer{
+      margin-top: 26px;
+      color: var(--bn72-muted);
+      border-top: 1px solid rgba(255,255,255,.10);
+      padding-top: 14px;
+      font-size: .95rem;
+    }
+    .note{
+      margin-top: 10px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      color: var(--bn72-muted);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>📚 Libros sugeridos</h1>
+      <p>Lecturas recomendadas para profundizar en soteriología arminiana/wesleyana y responder objeciones comunes.</p>
+    </header>
+<nav>
+  <a href="index.html">Inicio</a>
+  <a href="introduccion-soteriologia.html">Introducción</a>
+  <a href="gracia.html">Gracia y libertad</a>
+  <a href="eleccion.html">Elección en Cristo</a>
+  <a href="expiacion.html">La obra de Cristo</a>
+  <a href="fe.html">Fe y responsabilidad</a>
+  <a href="advertencias.html">Advertencias bíblicas</a>
+  <a href="textos-dificiles.html">Textos difíciles</a>
+  <a href="padres-preagustin.html">Padres pre-Agustín</a>
+  <a href="glosario.html">Glosario</a>
+  <a href="recursos.html">Recursos</a>
+  <a href="links.html">Links</a>
+  <a href="videos.html">Banco de vídeos</a>
+  <a href="libros.html">Libros sugeridos</a>
+  <a href="acerca.html">Acerca</a>
+</nav>
+
+    <div class="toolbar">
+      <strong>Fuente de la lista:</strong>
+      <a href="https://pensamientopentecostalarminiano.org/2021/11/09/top-10-los-mejores-libros-sobre-teologia-arminiana-en-espanol/" target="_blank" rel="noopener">
+        “Top 10 | Los mejores libros sobre teología arminiana en español”
+      </a>
+      <div class="note">
+        Nota: Los enlaces “Buscar” te llevan a una búsqueda (Google) para conseguir el libro en tu país (librerías, editoriales, tiendas digitales).
+      </div>
+    </div>
+
+    <section class="grid">
+
+      <!-- 1 -->
+      <article class="card">
+        <img class="cover" src="https://pensamientopentecostalarminiano.org/wp-content/uploads/2021/11/1-4.jpg?w=697" alt="Portada: La Teología de Jacobo Arminio" />
+        <div class="meta">
+          <span class="pill">Obras de Arminio</span>
+          <h3>La Teología de Jacobo Arminio: “Declaración de Sentimientos” y “Disputas Públicas”</h3>
+          <p class="author">Jacobo Arminio (edición y traducciones modernas)</p>
+          <p class="desc">
+            Punto de entrada “de primera mano” a la tradición arminiana: síntesis doctrinal y disputas clave que ayudan a distinguir caricaturas de Arminio de su pensamiento real. 
+          </p>
+          <div class="actions">
+            <a class="btn" href="https://pensamientopentecostalarminiano.org/2021/11/09/top-10-los-mejores-libros-sobre-teologia-arminiana-en-espanol/" target="_blank" rel="noopener">Ver reseña (fuente)</a>
+            <a class="btn secondary" href="https://www.google.com/search?q=La+Teolog%C3%ADa+de+Jacobo+Arminio+Declaraci%C3%B3n+de+Sentimientos+Disputas+P%C3%BAblicas+edici%C3%B3n+espa%C3%B1ol" target="_blank" rel="noopener">Buscar el libro</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="card">
+        <img class="cover" src="https://pensamientopentecostalarminiano.org/wp-content/uploads/2021/11/2-3.jpg?w=644" alt="Portada: Gracia, fe y santidad" />
+        <div class="meta">
+          <span class="pill">Teología sistemática</span>
+          <h3>Gracia, fe y santidad: Una teología sistemática wesleyana</h3>
+          <p class="author">H. Ray Dunning</p>
+          <p class="desc">
+            Panorama sistemático wesleyano: Dios, humanidad, salvación y santificación, dialogando con enfoques contemporáneos sin perder el pulso bíblico.
+          </p>
+          <div class="actions">
+            <a class="btn" href="https://pensamientopentecostalarminiano.org/2021/11/09/top-10-los-mejores-libros-sobre-teologia-arminiana-en-espanol/" target="_blank" rel="noopener">Ver reseña (fuente)</a>
+            <a class="btn secondary" href="https://www.google.com/search?q=H.+Ray+Dunning+Gracia+fe+y+santidad+teolog%C3%ADa+sistem%C3%A1tica+wesleyana+espa%C3%B1ol" target="_blank" rel="noopener">Buscar el libro</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="card">
+        <img class="cover" src="https://pensamientopentecostalarminiano.org/wp-content/uploads/2021/11/3-3.jpg?w=900" alt="Portada: Gracia, Fe y Libre Albedrío" />
+        <div class="meta">
+          <span class="pill">Debate Calvinismo/Arminianismo</span>
+          <h3>Gracia, fe &amp; libre albedrío: Contraste soteriológico entre calvinismo y arminianismo</h3>
+          <p class="author">Robert E. Picirilli</p>
+          <p class="desc">
+            Reabre con rigor los puntos de fricción históricos (elección, gracia, responsabilidad) y defiende un arminianismo “de la Reforma” con argumentación bíblica.
+          </p>
+          <div class="actions">
+            <a class="btn" href="https://pensamientopentecostalarminiano.org/2021/11/09/top-10-los-mejores-libros-sobre-teologia-arminiana-en-espanol/" target="_blank" rel="noopener">Ver reseña (fuente)</a>
+            <a class="btn secondary" href="https://www.google.com/search?q=Robert+E.+Picirilli+Gracia+fe+y+libre+albedr%C3%ADo+espa%C3%B1ol" target="_blank" rel="noopener">Buscar el libro</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="card">
+        <img class="cover" src="https://pensamientopentecostalarminiano.org/wp-content/uploads/2021/11/4-1.jpg?w=768" alt="Portada: Bases teológicas de Arminio y Wesley" />
+        <div class="meta">
+          <span class="pill">Historia doctrinal</span>
+          <h3>Bases teológicas de Arminio y Wesley</h3>
+          <p class="author">Mildred Bangs Wynkoop</p>
+          <p class="desc">
+            Estudio histórico-teológico centrado en la doctrina de la santidad, con atención a controversias sobre predestinación y su impacto en la vida cristiana.
+          </p>
+          <div class="actions">
+            <a class="btn" href="https://pensamientopentecostalarminiano.org/2021/11/09/top-10-los-mejores-libros-sobre-teologia-arminiana-en-espanol/" target="_blank" rel="noopener">Ver reseña (fuente)</a>
+            <a class="btn secondary" href="https://www.google.com/search?q=Mildred+Bangs+Wynkoop+Bases+teol%C3%B3gicas+de+Arminio+y+Wesley+espa%C3%B1ol" target="_blank" rel="noopener">Buscar el libro</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5 -->
+      <article class="card">
+        <img class="cover" src="https://pensamientopentecostalarminiano.org/wp-content/uploads/2021/11/5-1.jpg?w=1024" alt="Portada: Comentario de la Santa Biblia (Adam Clarke)" />
+        <div class="meta">
+          <span class="pill">Exégesis / Comentario bíblico</span>
+          <h3>Comentario de la Santa Biblia (3 tomos)</h3>
+          <p class="author">Adam Clarke (y Ralph Earle, edición condensada)</p>
+          <p class="desc">
+            Comentario clásico muy usado en el mundo evangélico; valioso para trabajo exegético y predicación, con fuerte trasfondo wesleyano.
+          </p>
+          <div class="actions">
+            <a class="btn" href="https://pensamientopentecostalarminiano.org/2021/11/09/top-10-los-mejores-libros-sobre-teologia-arminiana-en-espanol/" target="_blank" rel="noopener">Ver reseña (fuente)</a>
+            <a class="btn secondary" href="https://www.google.com/search?q=Comentario+de+la+Santa+Biblia+Adam+Clarke+3+tomos+espa%C3%B1ol" target="_blank" rel="noopener">Buscar el libro</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6 -->
+      <article class="card">
+        <img class="cover" src="https://pensamientopentecostalarminiano.org/wp-content/uploads/2021/11/6.jpg?w=683" alt="Portada: Jacobo Arminio - vida pensamiento y legado" />
+        <div class="meta">
+          <span class="pill">Biografía / Dogmática</span>
+          <h3>Jacobo Arminio: vida, pensamiento y legado</h3>
+          <p class="author">José C. Rodríguez</p>
+          <p class="desc">
+            Introducción amplia a la matriz arminiano-wesleyana y a la figura de Arminio, pensada para el lector hispano que no accede fácilmente a fuentes primarias.
+          </p>
+          <div class="actions">
+            <a class="btn" href="https://pensamientopentecostalarminiano.org/2021/11/09/top-10-los-mejores-libros-sobre-teologia-arminiana-en-espanol/" target="_blank" rel="noopener">Ver reseña (fuente)</a>
+            <a class="btn secondary" href="https://www.google.com/search?q=Jos%C3%A9+C.+Rodr%C3%ADguez+Jacobo+Arminio+vida+pensamiento+y+legado+espa%C3%B1ol" target="_blank" rel="noopener">Buscar el libro</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7 -->
+      <article class="card">
+        <img class="cover" src="https://pensamientopentecostalarminiano.org/wp-content/uploads/2021/11/7.jpg?w=648" alt="Portada: La vida en el Hijo" />
+        <div class="meta">
+          <span class="pill">Perseverancia / Seguridad</span>
+          <h3>La vida en el Hijo</h3>
+          <p class="author">Robert Shank</p>
+          <p class="desc">
+            Obra conocida por su discusión de la relación del creyente con Cristo y por encarar tensiones doctrinales sobre seguridad/perseverancia con tono argumentativo.
+          </p>
+          <div class="actions">
+            <a class="btn" href="https://pensamientopentecostalarminiano.org/2021/11/09/top-10-los-mejores-libros-sobre-teologia-arminiana-en-espanol/" target="_blank" rel="noopener">Ver reseña (fuente)</a>
+            <a class="btn secondary" href="https://www.google.com/search?q=Robert+Shank+La+vida+en+el+Hijo+espa%C3%B1ol" target="_blank" rel="noopener">Buscar el libro</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 8 -->
+      <article class="card">
+        <img class="cover" src="https://pensamientopentecostalarminiano.org/wp-content/uploads/2021/11/1111.jpg?w=683" alt="Portada: Teología Cristiana (Orton Wiley)" />
+        <div class="meta">
+          <span class="pill">Teología sistemática (3 tomos)</span>
+          <h3>Teología cristiana (Tomo I, II y III)</h3>
+          <p class="author">H. Orton Wiley</p>
+          <p class="desc">
+            “Magnum opus” wesleyano del siglo XX: exposición sistemática amplia, muy usada como referencia académica dentro de la tradición arminiano-wesleyana.
+          </p>
+          <div class="actions">
+            <a class="btn" href="https://pensamientopentecostalarminiano.org/2021/11/09/top-10-los-mejores-libros-sobre-teologia-arminiana-en-espanol/" target="_blank" rel="noopener">Ver reseña (fuente)</a>
+            <a class="btn secondary" href="https://www.google.com/search?q=H.+Orton+Wiley+Teolog%C3%ADa+Cristiana+3+tomos+espa%C3%B1ol" target="_blank" rel="noopener">Buscar el libro</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 9 -->
+      <article class="card">
+        <img class="cover" src="https://pensamientopentecostalarminiano.org/wp-content/uploads/2021/11/222.jpg?w=664" alt="Portada: Explorando la santidad cristiana" />
+        <div class="meta">
+          <span class="pill">Santidad</span>
+          <h3>Explorando la santidad cristiana (Tomo I, II y III)</h3>
+          <p class="author">Richard S. Taylor</p>
+          <p class="desc">
+            Tratado sistemático de la santidad como centro del plan de salvación: no como ideal distante, sino como experiencia y privilegio de gracia vivido por fe.
+          </p>
+          <div class="actions">
+            <a class="btn" href="https://pensamientopentecostalarminiano.org/2021/11/09/top-10-los-mejores-libros-sobre-teologia-arminiana-en-espanol/" target="_blank" rel="noopener">Ver reseña (fuente)</a>
+            <a class="btn secondary" href="https://www.google.com/search?q=Richard+S.+Taylor+Explorando+la+santidad+cristiana+3+tomos+espa%C3%B1ol" target="_blank" rel="noopener">Buscar el libro</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 10 -->
+      <article class="card">
+        <img class="cover" src="https://pensamientopentecostalarminiano.org/wp-content/uploads/2021/11/333.jpg?w=640" alt="Portada: Dios, hombre y salvación" />
+        <div class="meta">
+          <span class="pill">Teología bíblica</span>
+          <h3>Dios, hombre y salvación</h3>
+          <p class="author">Westlake T. Purkiser</p>
+          <p class="desc">
+            Presentación sistemática con fuerte enfoque bíblico y exegético; integra crítica textual/histórica y busca claridad doctrinal para el ministerio.
+          </p>
+          <div class="actions">
+            <a class="btn" href="https://pensamientopentecostalarminiano.org/2021/11/09/top-10-los-mejores-libros-sobre-teologia-arminiana-en-espanol/" target="_blank" rel="noopener">Ver reseña (fuente)</a>
+            <a class="btn secondary" href="https://www.google.com/search?q=Westlake+T.+Purkiser+Dios+hombre+y+salvaci%C3%B3n+espa%C3%B1ol" target="_blank" rel="noopener">Buscar el libro</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- BONUS 1 -->
+      <article class="card">
+        <img class="cover" src="https://pensamientopentecostalarminiano.org/wp-content/uploads/2021/11/escogidos-en-cristo.jpg?w=500" alt="Portada: Escogidos en Cristo" />
+        <div class="meta">
+          <span class="pill">Bonus</span>
+          <span class="pill">Elección / Predestinación</span>
+          <h3>Escogidos en Cristo: La doctrina de la elección</h3>
+          <p class="author">Ernesto Trenchard y José María Martínez</p>
+          <p class="desc">
+            Estudio serio sobre elección/predestinación y sus implicancias (soberanía y responsabilidad), con revisión bíblica e histórica y desarrollo positivo de la salvación.
+          </p>
+          <div class="actions">
+            <a class="btn" href="https://pensamientopentecostalarminiano.org/2021/11/09/top-10-los-mejores-libros-sobre-teologia-arminiana-en-espanol/" target="_blank" rel="noopener">Ver reseña (fuente)</a>
+            <a class="btn secondary" href="https://www.google.com/search?q=Escogidos+en+Cristo+Trenchard+Mart%C3%ADnez+doctrina+de+la+elecci%C3%B3n" target="_blank" rel="noopener">Buscar el libro</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- BONUS 2 -->
+      <article class="card">
+        <img class="cover" src="https://pensamientopentecostalarminiano.org/wp-content/uploads/2021/11/beacon.jpg?w=1024" alt="Portada: Diccionario Teológico Beacon" />
+        <div class="meta">
+          <span class="pill">Bonus</span>
+          <span class="pill">Consulta / Diccionario</span>
+          <h3>Diccionario Teológico Beacon (edición en español)</h3>
+          <p class="author">Richard S. Taylor (con Kenneth Grider y Willard Taylor)</p>
+          <p class="desc">
+            Herramienta de consulta para estudio bíblico-teológico: definiciones y artículos para distintos niveles, útil para predicación, enseñanza y lectura crítica.
+          </p>
+          <div class="actions">
+            <a class="btn" href="https://pensamientopentecostalarminiano.org/2021/11/09/top-10-los-mejores-libros-sobre-teologia-arminiana-en-espanol/" target="_blank" rel="noopener">Ver reseña (fuente)</a>
+            <a class="btn secondary" href="https://www.google.com/search?q=Diccionario+Teol%C3%B3gico+Beacon+edici%C3%B3n+espa%C3%B1ol" target="_blank" rel="noopener">Buscar el libro</a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <footer>
+      <p><strong>Buenas Nuevas 72</strong> — Biblioteca sugerida para estudio y formación.</p>
+      <p>Fuente principal de esta lista: Pensamiento Pentecostal Arminiano. (Ver enlace al inicio.)</p>
+    </footer>
+  </div>
+</body>
+</html>

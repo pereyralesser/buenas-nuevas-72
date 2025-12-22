@@ -6,164 +6,149 @@
   <title>Banco de vídeos — Buenas Nuevas 72</title>
   <link rel="stylesheet" href="css/estilos.css" />
 
-  <style>
-    :root{
-      --bg:#ffffff;
-      --text:#111827;
-      --muted:#4b5563;
-      --border:#e5e7eb;
-      --card:#ffffff;
-      --shadow: 0 10px 24px rgba(17,24,39,.08);
-      --accent:#6d28d9;
-      --accent2:#7c3aed;
-      --btnText:#ffffff;
-    }
+<style>
+  :root{
+    --bn72-purple:#5a2a82;
+    --bn72-purple-2:#7a3bb0;
 
-    body{
-      background: var(--bg);
-      color: var(--text);
-    }
+    --bn72-bg:#ffffff;
+    --bn72-card:#ffffff;
+    --bn72-border: rgba(0,0,0,.10);
 
-    main{
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 18px 14px 60px;
-    }
+    --bn72-text: rgba(0,0,0,.88);
+    --bn72-muted: rgba(0,0,0,.62);
+    --bn72-soft: rgba(90,42,130,.08);
+  }
 
-    .intro{
-      margin: 14px 0 18px;
-      padding: 14px;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: #fafafa;
-      color: var(--muted);
-    }
+  body{
+    background: var(--bn72-bg);
+    color: var(--bn72-text);
+  }
 
-    .section-title{
-      margin: 22px 0 10px;
-      font-size: 1.25rem;
-    }
+  main{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 18px 14px 60px;
+  }
 
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-      margin-top: 10px;
-    }
-    @media(min-width: 880px){
-      .grid{ grid-template-columns: 1fr 1fr; }
-    }
+  /* ✅ CORRECCIÓN: encabezado y pie en texto blanco */
+  header, footer{
+    color: #fff !important;
+  }
+  header h1,
+  header p,
+  footer p,
+  footer strong,
+  footer a{
+    color: #fff !important;
+  }
 
-    .card{
-      display:grid;
-      grid-template-columns: 160px 1fr;
-      gap: 14px;
-      padding: 14px;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      background: var(--card);
-      box-shadow: var(--shadow);
-      align-items:start;
-    }
+  /* Si tu footer tiene borde/estilos que oscurecen, lo neutralizamos */
+  footer{
+    border-top: 0 !important;
+    opacity: 1 !important;
+  }
 
-    .thumb{
-      width: 160px;
-      height: 90px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      object-fit: cover;
-      background: #f3f4f6;
-    }
+  .intro{
+    margin: 14px 0 18px;
+    padding: 14px;
+    border: 1px solid var(--bn72-border);
+    border-radius: 14px;
+    background: var(--bn72-soft);
+    color: var(--bn72-muted);
+  }
 
-    .meta h3{
-      margin: 0 0 6px;
-      font-size: 1.05rem;
-      line-height: 1.2;
-      font-weight: 800;
-    }
+  .section-title{
+    margin: 18px 0 10px;
+    font-size: 1.25rem;
+  }
 
-    .yt-title{
-      margin: 0 0 10px;
-      color: var(--text);
-      font-size: 1rem;
-      font-weight: 700;
-    }
+  .grid{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 10px;
+  }
+  @media(min-width: 880px){
+    .grid{ grid-template-columns: 1fr 1fr; }
+  }
 
-    .desc{
-      margin: 0 0 10px;
-      color: var(--muted);
-      font-size: .95rem;
-    }
+  .card{
+    display:grid;
+    grid-template-columns: 160px 1fr;
+    gap: 14px;
+    padding: 14px;
+    border-radius: 16px;
+    border: 1px solid var(--bn72-border);
+    background: var(--bn72-card);
+    align-items:start;
+  }
 
-    .actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin: 6px 0 0;
-    }
+  .thumb{
+    width: 160px;
+    height: 220px;
+    border-radius: 12px;
+    border: 1px solid var(--bn72-border);
+    object-fit: cover;
+    background: #f2f2f2;
+  }
 
-    .btn{
-      display:inline-block;
-      padding: 9px 12px;
-      border-radius: 12px;
-      border: 1px solid transparent;
-      text-decoration:none;
-      color: var(--btnText);
-      background: var(--accent);
-      font-weight: 700;
-    }
-    .btn:hover{ background: var(--accent2); }
+  .meta h3{
+    margin: 0 0 6px;
+    font-size: 1.05rem;
+    line-height: 1.2;
+    color: var(--bn72-text);
+  }
 
-    .btn.secondary{
-      background: #ffffff;
-      color: var(--accent);
-      border: 1px solid var(--border);
-    }
-    .btn.secondary:hover{
-      border-color: var(--accent);
-    }
+  .meta .author{
+    margin: 0 0 10px;
+    color: var(--bn72-muted);
+    font-size: .95rem;
+  }
 
-    details{
-      margin-top: 10px;
-      padding: 10px 12px;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: #fafafa;
-    }
+  .meta .desc{
+    margin: 0 0 10px;
+    color: var(--bn72-text);
+    font-size: .95rem;
+  }
 
-    summary{
-      cursor:pointer;
-      color: var(--accent);
-      font-weight: 800;
-    }
+  .actions{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top: 8px;
+  }
 
-    .embed{
-      margin-top: 10px;
-      aspect-ratio: 16 / 9;
-      width: 100%;
-      border: 0;
-      border-radius: 12px;
-      background: #000;
-    }
+  .btn{
+    display:inline-block;
+    padding: 9px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(90,42,130,.22);
+    text-decoration:none;
+    color: #fff;
+    background: var(--bn72-purple);
+  }
+  .btn:hover{ background: var(--bn72-purple-2); }
 
-    footer{
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 18px 14px 30px;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-    }
+  .btn.secondary{
+    color: var(--bn72-purple);
+    background: transparent;
+  }
+  .btn.secondary:hover{
+    background: rgba(90,42,130,.08);
+  }
 
-    /* Opcional: si tu estilos.css pinta el header/nav oscuro,
-       esto fuerza texto legible en blanco */
-    header, nav{
-      background: #ffffff;
-      color: var(--text);
-    }
-    header h1, header p, nav a{
-      color: var(--text);
-    }
-  </style>
+  .pill{
+    display:inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: .78rem;
+    border: 1px solid rgba(90,42,130,.22);
+    color: var(--bn72-purple);
+    margin: 0 8px 10px 0;
+    background: rgba(90,42,130,.06);
+  }
+</style>
 </head>
 
 <body>
@@ -328,3 +313,4 @@
 
 </body>
 </html>
+

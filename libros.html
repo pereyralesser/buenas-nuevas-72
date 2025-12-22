@@ -3,39 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Libros Sugeridos — Buenas Nuevas 72</title>
+  <title>Libros sugeridos — Buenas Nuevas 72</title>
   <link rel="stylesheet" href="css/estilos.css" />
 
+  <!-- Estilos locales: versión clara (fondo blanco) al estilo de fe.html -->
   <style>
     :root{
-      --bn72-bg:#0f0716;
-      --bn72-border:rgba(255,255,255,.10);
-      --bn72-text:rgba(255,255,255,.92);
-      --bn72-muted:rgba(255,255,255,.72);
+      --bn72-purple:#5a2a82;
+      --bn72-purple-2:#7a3bb0;
+
+      --bn72-bg:#ffffff;
+      --bn72-card:#ffffff;
+      --bn72-border: rgba(0,0,0,.10);
+
+      --bn72-text: rgba(0,0,0,.88);
+      --bn72-muted: rgba(0,0,0,.62);
+      --bn72-soft: rgba(90,42,130,.08);
     }
+
     body{
-      background: radial-gradient(1200px 600px at 20% 10%, rgba(122,59,176,.25), transparent 60%), var(--bn72-bg);
+      background: var(--bn72-bg);
       color: var(--bn72-text);
     }
-    main{ max-width: 1100px; margin: 0 auto; padding: 18px 14px 60px; }
+
+    main{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 18px 14px 60px;
+    }
+
+    header p{
+      color: var(--bn72-muted);
+    }
+
     .intro{
       margin: 14px 0 18px;
       padding: 14px;
       border: 1px solid var(--bn72-border);
       border-radius: 14px;
-      background: rgba(255,255,255,.04);
+      background: var(--bn72-soft);
       color: var(--bn72-muted);
     }
-    .section-title{ margin: 18px 0 10px; font-size: 1.25rem; }
+
+    .section-title{
+      margin: 18px 0 10px;
+      font-size: 1.25rem;
+    }
+
     .grid{
       display:grid;
       grid-template-columns: 1fr;
       gap: 14px;
       margin-top: 10px;
     }
+
     @media(min-width: 880px){
       .grid{ grid-template-columns: 1fr 1fr; }
     }
+
     .card{
       display:grid;
       grid-template-columns: 160px 1fr;
@@ -43,69 +68,83 @@
       padding: 14px;
       border-radius: 16px;
       border: 1px solid var(--bn72-border);
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      background: var(--bn72-card);
       align-items:start;
     }
+
     .thumb{
-      width: 160px; height: 90px;
+      width: 160px;
+      height: 220px;
       border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.14);
+      border: 1px solid var(--bn72-border);
       object-fit: cover;
-      background: rgba(255,255,255,.06);
+      background: #f2f2f2;
     }
+
     .meta h3{
       margin: 0 0 6px;
       font-size: 1.05rem;
       line-height: 1.2;
+      color: var(--bn72-text);
     }
-    .meta .desc{
+
+    .meta .author{
       margin: 0 0 10px;
       color: var(--bn72-muted);
       font-size: .95rem;
     }
-    .actions{ display:flex; gap:10px; flex-wrap:wrap; }
+
+    .meta .desc{
+      margin: 0 0 10px;
+      color: var(--bn72-text);
+      font-size: .95rem;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 8px;
+    }
+
     .btn{
       display:inline-block;
       padding: 9px 12px;
       border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.18);
+      border: 1px solid rgba(90,42,130,.22);
       text-decoration:none;
-      color:#fff;
-      background: rgba(90,42,130,.35);
+      color: #fff;
+      background: var(--bn72-purple);
     }
-    .btn:hover{ background: rgba(122,59,176,.45); }
-    .btn.secondary{ background: rgba(255,255,255,.06); }
+
+    .btn:hover{ background: var(--bn72-purple-2); }
+
+    .btn.secondary{
+      color: var(--bn72-purple);
+      background: transparent;
+    }
+
+    .btn.secondary:hover{
+      background: rgba(90,42,130,.08);
+    }
+
     .pill{
       display:inline-block;
       padding: 4px 10px;
       border-radius: 999px;
       font-size: .78rem;
-      border: 1px solid rgba(255,255,255,.14);
-      color: var(--bn72-muted);
+      border: 1px solid rgba(90,42,130,.22);
+      color: var(--bn72-purple);
       margin: 0 8px 10px 0;
-      background: rgba(90,42,130,.18);
+      background: rgba(90,42,130,.06);
     }
-    details{
-      margin-top: 10px;
-      padding: 10px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-    }
-    summary{ cursor:pointer; color:#fff; }
-    .embed{
-      margin-top: 10px;
-      aspect-ratio: 16 / 9;
-      width: 100%;
-      border: 0;
-      border-radius: 12px;
-    }
+
     footer{
       max-width: 1100px;
       margin: 0 auto;
       padding: 18px 14px 30px;
       color: var(--bn72-muted);
-      border-top: 1px solid rgba(255,255,255,.10);
+      border-top: 1px solid var(--bn72-border);
     }
   </style>
 </head>
@@ -113,8 +152,8 @@
 <body>
 
 <header>
-  <h1>Libros Sugeridos</h1>
-  <p>Dios llama, el ser humano responde</p>
+  <h1>Libros sugeridos</h1>
+  <p>Dios llama, el ser humano responde.</p>
 </header>
 
 <nav>
@@ -141,336 +180,217 @@
   <a href="libros.html">Libros sugeridos</a>
   <a href="acerca.html">Acerca</a>
 </nav>
-<main>
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Libros sugeridos | Buenas Nuevas 72</title>
-  <link rel="stylesheet" href="css/estilos.css" />
-
-  <!-- Estilos locales por si tu CSS general todavía no tiene “cards” -->
-  <style>
-    :root{
-      --bn72-purple:#5a2a82;
-      --bn72-purple-2:#7a3bb0;
-      --bn72-bg:#0f0716;
-      --bn72-card:#160a22;
-      --bn72-border:rgba(255,255,255,.10);
-      --bn72-text:rgba(255,255,255,.92);
-      --bn72-muted:rgba(255,255,255,.72);
-    }
-    body{ background: radial-gradient(1200px 600px at 20% 10%, rgba(122,59,176,.25), transparent 60%), var(--bn72-bg); color:var(--bn72-text); }
-    .container{ max-width: 1050px; margin: 0 auto; padding: 24px 16px 60px; }
-    header h1{ margin: 0 0 6px; font-size: 2rem; }
-    header p{ margin: 0; color: var(--bn72-muted); }
-    .toolbar{
-      margin: 18px 0 18px;
-      padding: 14px;
-      background: linear-gradient(180deg, rgba(90,42,130,.25), rgba(90,42,130,.10));
-      border: 1px solid var(--bn72-border);
-      border-radius: 14px;
-    }
-    .toolbar a{ color: #fff; }
-    .grid{
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-      margin-top: 14px;
-    }
-    @media (min-width: 820px){
-      .grid{ grid-template-columns: 1fr 1fr; }
-    }
-    .card{
-      display: grid;
-      grid-template-columns: 92px 1fr;
-      gap: 14px;
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border: 1px solid var(--bn72-border);
-      border-radius: 16px;
-      padding: 14px;
-      align-items: start;
-    }
-    .cover{
-      width: 92px; height: 128px;
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,.15);
-      object-fit: cover;
-      background: rgba(255,255,255,.06);
-    }
-    .meta h3{ margin: 0 0 6px; font-size: 1.05rem; line-height: 1.2; }
-    .meta .author{ margin: 0 0 10px; color: var(--bn72-muted); font-size: .95rem; }
-    .meta .desc{ margin: 0 0 12px; color: var(--bn72-text); font-size: .95rem; }
-    .pill{
-      display:inline-block;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: .78rem;
-      border: 1px solid rgba(255,255,255,.14);
-      color: var(--bn72-muted);
-      margin: 0 8px 10px 0;
-      background: rgba(90,42,130,.18);
-    }
-    .actions{
-      display:flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 8px;
-    }
-    .btn{
-      display:inline-block;
-      padding: 9px 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.18);
-      text-decoration:none;
-      color:#fff;
-      background: rgba(90,42,130,.35);
-    }
-    .btn:hover{ background: rgba(122,59,176,.45); }
-    .btn.secondary{ background: rgba(255,255,255,.06); }
-    footer{
-      margin-top: 26px;
-      color: var(--bn72-muted);
-      border-top: 1px solid rgba(255,255,255,.10);
-      padding-top: 14px;
-      font-size: .95rem;
-    }
-    .note{
-      margin-top: 10px;
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      color: var(--bn72-muted);
-    }
-  </style>
-</head>
-
-<body>
-  <div class="container">
-  
-
 
 <main>
-   <div class="toolbar">
-     
-      <div class="note">
-        Nota: Los enlaces “Buscar” te llevan a una página web para conseguir el libro. (librerías, editoriales, tiendas digitales).
+
+  <div class="intro">
+    Nota: Los enlaces “Buscar el libro” te llevan a páginas donde podés conseguirlo (editoriales, librerías o tiendas digitales).
+  </div>
+
+  <h2 class="section-title">Biblioteca recomendada</h2>
+
+  <section class="grid">
+
+    <!-- 1 -->
+    <article class="card">
+      <img class="thumb" src="https://m.media-amazon.com/images/I/61YtE6S9-AL._SY425_.jpg" alt="Portada: El Fundamento del Calvinismo Agustiniano" />
+      <div class="meta">
+        <span class="pill">Teología bíblica</span>
+        <h3>El Fundamento del Calvinismo Agustiniano</h3>
+        <p class="author">Ken Wilson</p>
+        <p class="desc">
+          Investigación accesible sobre el desarrollo histórico del libre albedrío en la antigüedad y en los primeros siglos cristianos,
+          y el contraste entre los escritos tempranos y posteriores de Agustín.
+        </p>
+        <div class="actions">
+          <a class="btn secondary" href="https://www.amazon.com/-/es/Fundamento-del-Calvinismo-Agustiniano-Spanish/dp/B086PPM2BD" target="_blank" rel="noopener">Buscar el libro</a>
+        </div>
       </div>
-    </div>
+    </article>
 
-    <section class="grid">
-
-<!-- 1 -->
-      <article class="card">
-        <img class="cover" src="https://m.media-amazon.com/images/I/61YtE6S9-AL._SY425_.jpg" />
-        <div class="meta">
-          <span class="pill">Teología bíblica</span>
-          <h3>El Fundamento del Calvinismo Agustiniano.</h3>
-          <p class="author">Ken Wilson (Autor)</p>
-          <p class="desc">
-            Este libro es un resumen de dicha tesis doctoral "rompedora" del Dr. Wilson en la Universidad de Oxford, y la editó Mohr Siebeck en 2018 bajo el título de Cómo se convirtió Agustín de la libre elección tradicional al 'libre albedrío no libre': una metodología integral. Pensando en otro tipo de lector, el Dr. Wilson presenta su extensa investigación sobre el libre albedrío utilizando un formato más corto y accesible, traduciendo las citas en otros idiomas antiguos y modernos para que sea asequible para un lector no erudito. Esta investigación presenta las ideas antiguas pre-cristianas sobre el libre albedrío y luego muestra cómo pensaban los cristianos de los primeros siglos sobre este tema. El Dr. Wilson hace un resumen básico en cuanto al libre albedrío, enfocando primeramente las ideas de las antiguas filosofías y religiones como el estoicismo, el gnosticismo, el neoplatonismo y el maniqueísmo. Luego resalta los escritos de los primeros autores cristianos que escribieron sobre el libre albedrío. Finalmente, el Dr. Wilson investiga una curiosa disyuntiva entre los escritos tempranos y posteriores de San Agustín, y muestra cómo las ideas expresadas en los escritos posteriores de Agustín se convirtieron en la base y fundamento de la teología calvinista (reformada) moderna, también conocida como calvinismo agustiniano.Ken Wilson, M.D., D. Phil.          </p>
-          <div class="actions">           
-           <a class="btn secondary" href="https://www.amazon.com/-/es/Fundamento-del-Calvinismo-Agustiniano-Spanish/dp/B086PPM2BD" target="_blank" rel="noopener">Buscar el libro</a>
-          </div>
+    <!-- 2 -->
+    <article class="card">
+      <img class="thumb" src="https://m.media-amazon.com/images/I/61tOj1+asHL._SY385_.jpg" alt="Portada: La Teología de Jacobo Arminio" />
+      <div class="meta">
+        <span class="pill">Arminianismo clásico</span>
+        <h3>La Teología de Jacobo Arminio: Declaración de Sentimientos y Disputas Públicas</h3>
+        <p class="author">Jacobo Arminio · Trad. Jorge M. De Sousa</p>
+        <p class="desc">
+          Traducción al español de dos obras fundamentales: una síntesis defensiva de sus convicciones y un compendio para formación teológica.
+        </p>
+        <div class="actions">
+          <a class="btn secondary" href="https://www.amazon.com/-/es/Teologia-Jacobo-Arminio-Declaracion-Sentimientos/dp/6125034046" target="_blank" rel="noopener">Buscar el libro</a>
         </div>
-      </article>
+      </div>
+    </article>
 
-
-<!-- 2 -->
-      <article class="card">
-        <img class="cover" src="https://m.media-amazon.com/images/I/61tOj1+asHL._SY385_.jpg" />
-        <div class="meta">
-          <span class="pill">Teología bíblica</span>
-          <h3>La Teologia de Jacobo Arminio: Declaracion de Sentimientos y Disputas Publicas</h3>
-          <p class="author">de Jacobo Arminio (Autor), Jorge M. De Sousa (Traductor)</p>
-          <p class="desc">
-            Jacobo Arminio (1560 -1609), fue profesor de teología en la Universidad de Leiden en Holanda desde 1603 hasta su muerte. Escribió muchos libros y tratados de teología, publicados después de su muerte, y sus opiniones se convirtieron en la base del arminianismo, del movimiento Remostrante holandés, así como del metodismo y el pentecostalismo. La influencia de Arminio en la teología evangélica protestante es sólo igualada por Juan Calvino. Durante toda su vida, Arminio buscó ser fiel al mensaje de las Escrituras, tal y como había sido comprendido desde la era apostólica, patrística, medieval, y de la reforma. Su obra es producto de un intelecto elevadísimo, y una profunda piedad y amor a la Iglesia. Su lema al momento de escribir era Bona conscientia paradisus, que significa: Una buena conciencia es un paraíso.
-Sin embargo, aunque la influencia de Arminio ha sido tremenda en Latinoamérica es realmente muy poco lo que se conoce de él, y abundan distorsiones de su pensamiento, tanto de sus defensores como de sus críticos. Este libro representa la primera traducción al español de las dos principales obras teológicas del teólogo holandés. La Declaración de Sentimientosrepresenta la síntesis y defensa de sus creencias, compuesta poco antes de su muerte, y Disputas Públicases un compendio de teología sistemática, escrito para sus colegas y estudiantes de teología.
-          </p>
-          <div class="actions">           
-           <a class="btn secondary" href="https://www.amazon.com/-/es/Teologia-Jacobo-Arminio-Declaracion-Sentimientos/dp/6125034046" target="_blank" rel="noopener">Buscar el libro</a>
-          </div>
+    <!-- 3 -->
+    <article class="card">
+      <img class="thumb" src="https://m.media-amazon.com/images/I/71VoBudwU8L._SY425_.jpg" alt="Portada: Gracia, Fe y Libre Albedrío" />
+      <div class="meta">
+        <span class="pill">Soteriología</span>
+        <h3>Gracia, Fe &amp; Libre Albedrío</h3>
+        <p class="author">Robert E. Picirilli</p>
+        <p class="desc">
+          Contraste entre calvinismo clásico y arminianismo, defendiendo una lectura bíblica del arminianismo de la Reforma.
+        </p>
+        <div class="actions">
+          <a class="btn secondary" href="https://www.amazon.com/-/es/Gracia-Libre-Albedrio-Soteriologicos-Arminianismo/dp/0892659912" target="_blank" rel="noopener">Buscar el libro</a>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <!-- 3 -->
-      <article class="card">
-        <img class="cover" src="https://m.media-amazon.com/images/I/71VoBudwU8L._SY425_.jpg" />
-        <div class="meta">
-          <span class="pill">Teología bíblica</span>
-          <h3>Gracia, Fe & Libre Albedrio: Un Contraste de Los Puntos de Vista Soteriologicos Entre El Calvinismo Y El Arminianismo</h3>
-          <p class="author">de Robert E Picirilli (Autor)</p>
-          <p class="desc">
-            Esta es la traducción al español de Gracia, Fe, Libre Albedrío: Visiones Contrastadas de la Salvación, el Calvinismo y el Arminianismo. En esta obra, Picirilli renueva el debate sobre los temas que han dividido al Calvinismo y al Arminianismo desde la Reforma.
-Jacobus Arminius, teólogo holandés del siglo XVI, cuestionó las ideas teológicas dominantes propuestas por el reconocido reformador protestante Juan Calvino y sus discípulos. Históricamente, Arminius ha sido frecuentemente malinterpretado y reinterpretado tanto por sus aliados como por sus adversarios. Si bien Picirilli presenta tanto el Calvinismo clásico como el Arminianismo para ayudar a los lectores a tomar una decisión inteligente, defiende abiertamente una forma muy específica de Arminianismo como la mejor solución a las tensiones entre ambas posturas doctrinales. En lo que él llama "Arminianismo de la Reforma", Picirilli reivindica las ideas originales de Arminio y sus defensores.
-          </p>
-          <div class="actions">           
-           <a class="btn secondary" href="https://www.amazon.com/-/es/Gracia-Libre-Albedrio-Soteriologicos-Arminianismo/dp/0892659912" target="_blank" rel="noopener">Buscar el libro</a>
-          </div>
+    <!-- 4 -->
+    <article class="card">
+      <img class="thumb" src="https://m.media-amazon.com/images/I/41blreLmSfL._SY342_.jpg" alt="Portada: Bases teológicas de Arminio y Wesley" />
+      <div class="meta">
+        <span class="pill">Historia doctrinal</span>
+        <h3>Bases teológicas de Arminio y Wesley</h3>
+        <p class="author">Mildred Bangs Wynkoop</p>
+        <p class="desc">
+          Estudio histórico-doctrinal con foco en la santidad, comparando tensiones y acentos teológicos en tradiciones reformadas y wesleyanas.
+        </p>
+        <div class="actions">
+          <a class="btn secondary" href="https://www.amazon.com/-/es/Bases-Teologicas-Arminio-Y-Wesley/dp/1563440342" target="_blank" rel="noopener">Buscar el libro</a>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <!-- 4 -->
-      <article class="card">
-        <img class="cover" src="https://m.media-amazon.com/images/I/41blreLmSfL._SY342_.jpg" />
-        <div class="meta">
-          <span class="pill">Historia doctrinal</span>
-          <h3>Bases teológicas de Arminio y Wesley</h3>
-          <p class="author">Mildred Bangs Wynkoop</p>
-          <p class="desc">
-            El interes predominante en este estudio es el de aclarar y hacer el debido enfasis en la doctrina de la santidad. No se trata de un medio para dogmatizar, sino mas bien de un ensayo historico. El estudio comienza con la historia del desarrollo doctrinal de las diversas teorias de la predestinacion y de las controversias en las cuales estan implicadas. El area inmediata de estudio enfoca el centro de los dogmas teologicos caracteristicos del calvinismo, del arminianismo evangelico y liberal, el wesleyanismo y de algunas variedades y combinaciones de estas ensenanzas. La seccion final examina criticamente las distintas tensiones teologicas pertinentes al tema. Las conclusiones a las que llega la autora, podria determinar el concepto personal del lector acerca de la obra del Espiritu Santo en la vida del cristiano. Estas conclusiones exponen con claridad las ensenanzas peculiares que caracterizan a las dos tradiciones teologicas.
-          </p>
-          <div class="actions">            
-            <a class="btn secondary" href="https://www.amazon.com/-/es/Bases-Teologicas-Arminio-Y-Wesley/dp/1563440342" target="_blank" rel="noopener">Buscar el libro</a>
-          </div>
+    <!-- 5 -->
+    <article class="card">
+      <img class="thumb" src="https://pensamientopentecostalarminiano.org/wp-content/uploads/2021/11/333.jpg?w=640" alt="Portada: Dios, hombre y salvación" />
+      <div class="meta">
+        <span class="pill">Teología bíblica</span>
+        <h3>Dios, hombre y salvación</h3>
+        <p class="author">Westlake T. Purkiser</p>
+        <p class="desc">
+          Obra sistemática con fuerte orientación bíblica y exegética; útil para estudio y formación doctrinal.
+        </p>
+        <div class="actions">
+          <a class="btn secondary" href="https://www.amazon.com/-/es/Dios-Hombre-y-Salvaci%C3%B3n-Spanish/dp/1563440423" target="_blank" rel="noopener">Buscar el libro</a>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <!-- 5 -->
-      <article class="card">
-        <img class="cover" src="https://pensamientopentecostalarminiano.org/wp-content/uploads/2021/11/333.jpg?w=640" alt="Portada: Dios, hombre y salvación" />
-        <div class="meta">
-          <span class="pill">Teología bíblica</span>
-          <h3>Dios, hombre y salvación</h3>
-          <p class="author">Westlake T. Purkiser</p>
-          <p class="desc">
-            Esta es una obra teologica de las que hay muy pocas en el mundo. Aunque con presentacion sistematica, esta es una obra emblema de teologia biblica porque toma en cuenta los resultados comprobados de la cristica historica y textual usando, al mismo tiempo, principios de exegesis biblica. La profundidad y el alcance teologico de esta obra la hace de trascendental importancia en las aulas y bibliotecas de todo siervo comprometido con la verdad de Dios. 772 paginas
-          </p>
-          <div class="actions">
-            <a class="btn" href="https://www.amazon.com/-/es/Dios-Hombre-y-Salvaci%C3%B3n-Spanish/dp/1563440423" target="_blank" rel="noopener">Buscar el libro</a>
-          </div>
+    <!-- 6 -->
+    <article class="card">
+      <img class="thumb" src="https://m.media-amazon.com/images/I/8194Z7UlbmL._SY466_.jpg" alt="Portada: Teología Sistemática Tomo I" />
+      <div class="meta">
+        <span class="pill">Teología sistemática</span>
+        <h3>Teología Sistemática: Tomo I</h3>
+        <p class="author">J. R. Garrett</p>
+        <p class="desc">
+          Presentación bíblica e histórica de doctrinas fundamentales: Dios, creación, humanidad y Cristo.
+        </p>
+        <div class="actions">
+          <a class="btn secondary" href="https://www.amazon.com/-/es/gp/product/0311091407/ref=ewc_pr_img_1?smid=ATVPDKIKX0DER&psc=1" target="_blank" rel="noopener">Buscar el libro</a>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <!-- 6 -->
-      <article class="card">
-        <img class="cover" src="https://m.media-amazon.com/images/I/8194Z7UlbmL._SY466_.jpg" />
-        <div class="meta">
-          <span class="pill">Teología bíblica</span>
-          <h3>Teologia Sistematica: Tomo I, Biblica, Historica, Evangelica</h3>
-          <p class="author">JR. Garrett (Autor)</p>
-          <p class="desc">
-            Bíblica, histórica, evangélica, enfoca las doctrinas de la Biblia, Dios, la creación, la humanidad y Jesucristo.
-          </p>
-          <div class="actions">           
-            <a class="btn secondary" href="https://www.amazon.com/-/es/gp/product/0311091407/ref=ewc_pr_img_1?smid=ATVPDKIKX0DER&psc=1" target="_blank" rel="noopener">Buscar el libro</a>
-
-          </div>
+    <!-- 7 -->
+    <article class="card">
+      <img class="thumb" src="https://m.media-amazon.com/images/I/71QNdfYdjVL._SY466_.jpg" alt="Portada: Teología Sistemática Tomo II" />
+      <div class="meta">
+        <span class="pill">Teología sistemática</span>
+        <h3>Teología Sistemática: Tomo II</h3>
+        <p class="author">J. R. Garrett</p>
+        <p class="desc">
+          Continuación del tomo I, con desarrollo doctrinal y enfoque evangélico en clave bíblica e histórica.
+        </p>
+        <div class="actions">
+          <a class="btn secondary" href="https://www.amazon.com/-/es/gp/product/0311091415/ref=ewc_pr_img_2?smid=ATVPDKIKX0DER&psc=1" target="_blank" rel="noopener">Buscar el libro</a>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <!-- 7 -->
-      <article class="card">
-        <img class="cover" src="https://m.media-amazon.com/images/I/71QNdfYdjVL._SY466_.jpg" />
-        <div class="meta">
-          <span class="pill">Teología bíblica</span>
-          <h3>Teologia sistematica Tomo II</h3>
-          <p class="author">JR. Garrett (Autor)</p>
-          <p class="desc">
-            Bíblica, histórica, evangélica, enfoca las doctrinas de la Biblia, Dios, la creación, la humanidad y Jesucristo.
-          </p>
-          <div class="actions">           
-            <a class="btn secondary" href="https://www.amazon.com/-/es/gp/product/0311091415/ref=ewc_pr_img_2?smid=ATVPDKIKX0DER&psc=1" target="_blank" rel="noopener">Buscar el libro</a>
-          </div>
+    <!-- 8 -->
+    <article class="card">
+      <img class="thumb" src="https://m.media-amazon.com/images/I/91Sbg4uZT+L._SY425_.jpg" alt="Portada: Teología Arminiana: Mitos y realidades" />
+      <div class="meta">
+        <span class="pill">Arminianismo</span>
+        <h3>Teología Arminiana: Mitos y realidades</h3>
+        <p class="author">Roger E. Olson</p>
+        <p class="desc">
+          Exposición del arminianismo clásico y respuesta a malentendidos frecuentes, con tono conciliador y claridad teológica.
+        </p>
+        <div class="actions">
+          <a class="btn secondary" href="https://www.amazon.com/-/es/Roger-Olson-ebook/dp/B0BCH63BRB" target="_blank" rel="noopener">Buscar el libro</a>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <!-- 8 -->
-      <article class="card">
-        <img class="cover" src="https://m.media-amazon.com/images/I/91Sbg4uZT+L._SY425_.jpg" />
-        <div class="meta">
-          <span class="pill">Teología bíblica</span>
-          <h3>Teología Arminiana: Mitos y realidades</h3>
-          <p class="author"> de Roger E. Olson (Autor)</p>
-          <p class="desc">
-            En este libro, Roger Olson expone la teología arminiana clásica y trata las numerosas equivocaciones y deturpaciones que ha sufrido el arminianismo a lo largo de los tiempos. Conciliador, pero penetrante, Olson argumenta que la teología arminiana clásica tiene un lugar de derecho en la iglesia evangélica, ya que posee profundas raíces dentro de la teología reformada, aunque presenta importantes diferencias del calvinismo..
-          </p>
-          <div class="actions">           
-            <a class="btn secondary" href="https://www.amazon.com/-/es/Roger-Olson-ebook/dp/B0BCH63BRB" target="_blank" rel="noopener">Buscar el libro</a>
-          </div>
+    <!-- 9 -->
+    <article class="card">
+      <img class="thumb" src="https://m.media-amazon.com/images/I/51Zn4uxamgL._SY425_.jpg" alt="Portada: Teología Cristiana Sistemática" />
+      <div class="meta">
+        <span class="pill">Sistema cristiano</span>
+        <h3>Teología Cristiana Sistemática</h3>
+        <p class="author">F. Leroy Forlines</p>
+        <p class="desc">
+          Teología sistemática con diálogo crítico; busca claridad para un público amplio sin perder profundidad.
+        </p>
+        <div class="actions">
+          <a class="btn secondary" href="https://www.abebooks.com/9780892654826/Teologia-Cristiana-Sistematica-Estudio-Sistema-0892654821/plp" target="_blank" rel="noopener">Buscar el libro</a>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <!-- 9 -->
-      <article class="card">
-        <img class="cover" src="https://m.media-amazon.com/images/I/51Zn4uxamgL._SY425_.jpg" />
-        <div class="meta">
-          <span class="pill">Teología bíblica</span>
-          <h3>Teologia Cristiana Sistematica: Un Estudio del Sistema Cristiano de Vida y Pensamiento</h3>
-          <p class="author"> de F. Leroy Forlines (Autor)</p>
-          <p class="desc">
-            Mientras presento una verdad eterna, he intentado siempre darme cuenta de la escena actual y dirigirme a ella. He estado mas preocupado con la escena actual, tan influida como esta por el secularismo, que por los conflictos y las controversias del mundo teológico, aunque tampoco he desatendido la escena teológica. Este libro se ha escrito para una audiencia amplia. Por esta razón he tratando de ser tan sencillo en los materiales como el tema me permitiera. Al mismo tiempo, he tocado algunas áreas y he presentado diferentes enfoques a algunos temas, los cuales espero que tengan interés para los que están mejor informados en cuanto a estos temas. Tengo un gran respecto de la opinión de los que son eruditos devotos de la Biblia, pero no he vacilado en criticar sus puntos de vista cuando a mi me parecen estar en error. Espero que a la vez también vayan a criticar mis opiniones de igual modo. Es mi oración que este libro sea un instrumento en las manos de Dios para traer gloria al nombre de Jesucristo.
-          </p>
-          <div class="actions">           
-            <a class="btn secondary" href="https://www.abebooks.com/9780892654826/Teologia-Cristiana-Sistematica-Estudio-Sistema-0892654821/plp" target="_blank" rel="noopener">Buscar el libro</a>
-          </div>
+    <!-- 10 -->
+    <article class="card">
+      <img class="thumb" src="https://m.media-amazon.com/images/I/713FNZQyu+L._SY425_.jpg" alt="Portada: Todo aquel que en Él cree" />
+      <div class="meta">
+        <span class="pill">Respuesta al TULIP</span>
+        <h3>Todo aquel que en Él cree</h3>
+        <p class="author">David L. Allen · Steve W. Lemke</p>
+        <p class="desc">
+          Evaluación bíblico-teológica crítica de los cinco puntos del calvinismo a partir de la conferencia “Juan 3:16”.
+        </p>
+        <div class="actions">
+          <a class="btn secondary" href="https://www.amazon.com/-/es/David-L-Allen-ebook/dp/B01M196NE2" target="_blank" rel="noopener">Buscar el libro</a>
         </div>
-      </article>
+      </div>
+    </article>
 
-<!-- 10 -->
-      <article class="card">
-        <img class="cover" src="https://m.media-amazon.com/images/I/713FNZQyu+L._SY425_.jpg" />
-        <div class="meta">
-          <span class="pill">Teología bíblica</span>
-          <h3>Todo aquel que en Él cree: Una crítica bíblica y teológica a los cinco puntos del calvinismo</h3>
-          <p class="author">de David L. Allen (Autor), Steve W Lemke (Autor) </p>
-          <p class="desc">
-            A partir de la conferencia “Juan 3:16” celebrada a fines de 2008 en la Primera Iglesia Bautista de Woodstock, Georgia (EE.UU.), Todo aquel en Él cree presenta una evaluación bíblico-teológica y una respuesta a la doctrina de cinco puntos del calvinismo. Entre los líderes bautistas que ofrecen una alternativa a la doctrina de cinco principios se incluye a Paige Patterson (Depravación total), Richard Land (Elección incondicional), David Allen (Expiación limitada), Steve Lemke (Gracia irresistible) y Kenneth Keathley (Perseverancia de los santos).
-El libro también incluye una serie de artículos sobre asuntos cruciales en lo teológico y ministerial que afectan el calvinismo, escritos por Bruce Little (El libre albedrío del libertarianismo y el problema del mal), Alan Streett (Una defensa de la invitación pública), Malcolm Yarnell (Eclesiología bautista histórica y el calvinismo) y Kevin Kennedy (¿Fue Calvino calvinista?).
-          </p>
-          <div class="actions">           
-           <a class="btn secondary" href="https://www.amazon.com/-/es/David-L-Allen-ebook/dp/B01M196NE2" target="_blank" rel="noopener">Buscar el libro</a>
-          </div>
+    <!-- 11 -->
+    <article class="card">
+      <img class="thumb" src="https://m.media-amazon.com/images/I/71D3qQKDnnL._SY425_.jpg" alt="Portada: Gracia, Fe y Santidad" />
+      <div class="meta">
+        <span class="pill">Wesleyanismo</span>
+        <h3>Gracia, Fe y Santidad</h3>
+        <p class="author">H. Ray Dunning</p>
+        <p class="desc">
+          Teología sistemática wesleyana que integra salvación y santificación, con diálogo contemporáneo y base histórica.
+        </p>
+        <div class="actions">
+          <a class="btn secondary" href="https://www.amazon.com/-/es/Gracia-Fe-Santidad-sistem%C3%A1tica-wesleyana/dp/1563448785" target="_blank" rel="noopener">Buscar el libro</a>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <!-- 11 -->
-      <article class="card">
-        <img class="cover" src="https://m.media-amazon.com/images/I/71D3qQKDnnL._SY425_.jpg" />
-        <div class="meta">
-          <span class="pill">Teología bíblica</span>
-          <h3>Gracia, Fe y Santidad: Una teología sistemática wesleyana</h3>
-          <p class="author">de H Ray Dunning (Autor)</p>
-          <p class="desc">
-            Esta obra monumental aborda la teología wesleyana tradicional a la luz de varios puntos de vista teológicos y filosóficos contemporáneos. Dunning examina la doctrina de Dios, la humanidad, la salvación y la santificación. Él examina las fuentes teológicas como también la naturaleza y el alcance de la tarea teológica.
-          </p>
-          <div class="actions">           
-           <a class="btn secondary" href="https://www.amazon.com/-/es/Gracia-Fe-Santidad-sistem%C3%A1tica-wesleyana/dp/1563448785" target="_blank" rel="noopener">Buscar el libro</a>
-          </div>
+    <!-- 12 -->
+    <article class="card">
+      <img class="thumb" src="https://m.media-amazon.com/images/I/61XvOUfGTGL._SY466_.jpg" alt="Portada: Diccionario Teológico Beacon" />
+      <div class="meta">
+        <span class="pill">Herramienta</span>
+        <h3>Diccionario Teológico Beacon</h3>
+        <p class="author">Richard S. Taylor (Ed.)</p>
+        <p class="desc">
+          Herramienta de investigación para estudio doctrinal y bíblico, útil en distintos niveles de formación.
+        </p>
+        <div class="actions">
+          <a class="btn secondary" href="https://www.amazon.com/-/es/Diccionario-Teologico-Beacon-Spanish-Richard/dp/1563440938" target="_blank" rel="noopener">Buscar el libro</a>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <!-- 12 -->
-      <article class="card">
-        <img class="cover" src="https://m.media-amazon.com/images/I/61XvOUfGTGL._SY466_.jpg" />
-        <div class="meta">
-          <span class="pill">Teología bíblica</span>
-          <h3>Diccionario Teologico Beacon (Spanish Edition)</h3>
-          <p class="author">de Richard S Taylor M.A. Th.D. (Editor)
-</p>
-          <p class="desc">
-            Continuando con la tradicion de publicar obras profundas de alta calidad y contenido que nos distingue publicamos, de los autores Richard Taylor, Kenneth Grider y Willard Taylor, esta obra que marca un hito en la vida de Casa Nazarena de Publicaciones sirviendo a sus lectores. El Diccionario Teologico Beacon, obra exclusiva de CNP, es esta una poderosa herramienta de investigacion para todo nivel de estudio.736 paginas. Categoria Teologia/Doctrina
-          </p>
-          <div class="actions">           
-           <a class="btn secondary" href="https://www.amazon.com/-/es/Diccionario-Teologico-Beacon-Spanish-Richard/dp/1563440938" target="_blank" rel="noopener">Buscar el libro</a>
-          </div>
-        </div>
-      </article>
+  </section>
 
 </main>
 
-   <footer>
-      <p><strong>Buenas Nuevas 72</strong> — Biblioteca sugerida para estudio y formación.</p>
-    </footer>
-  </div>
+<footer>
+  <p><strong>Buenas Nuevas 72</strong> — Biblioteca sugerida para estudio y formación.</p>
+</footer>
+
 </body>
 </html>
-
-
-
-
-
-

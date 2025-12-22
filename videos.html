@@ -8,36 +8,41 @@
 
   <style>
     :root{
-      /* Paleta BN72 */
-      --bn72-purple:#5a2a82;
-      --bn72-purple-2:#7a3bb0;
-
-      /* ✅ MODO CLARO */
-      --bn72-bg:#ffffff;
-      --bn72-card:#ffffff;
-      --bn72-border: rgba(0,0,0,.10);
-      --bn72-text: rgba(0,0,0,.88);
-      --bn72-muted: rgba(0,0,0,.62);
-      --bn72-soft: rgba(90,42,130,.08);
+      --bg:#ffffff;
+      --text:#111827;
+      --muted:#4b5563;
+      --border:#e5e7eb;
+      --card:#ffffff;
+      --shadow: 0 10px 24px rgba(17,24,39,.08);
+      --accent:#6d28d9;
+      --accent2:#7c3aed;
+      --btnText:#ffffff;
     }
 
     body{
-      background: var(--bn72-bg);
-      color: var(--bn72-text);
+      background: var(--bg);
+      color: var(--text);
     }
 
-    main{ max-width: 1100px; margin: 0 auto; padding: 18px 14px 60px; }
+    main{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 18px 14px 60px;
+    }
 
     .intro{
       margin: 14px 0 18px;
       padding: 14px;
-      border: 1px solid var(--bn72-border);
+      border: 1px solid var(--border);
       border-radius: 14px;
-      background: var(--bn72-soft);
-      color: var(--bn72-muted);
+      background: #fafafa;
+      color: var(--muted);
     }
 
-    .section-title{ margin: 18px 0 10px; font-size: 1.25rem; }
+    .section-title{
+      margin: 22px 0 10px;
+      font-size: 1.25rem;
+    }
 
     .grid{
       display:grid;
@@ -55,72 +60,82 @@
       gap: 14px;
       padding: 14px;
       border-radius: 16px;
-      border: 1px solid var(--bn72-border);
-      background: var(--bn72-card);
+      border: 1px solid var(--border);
+      background: var(--card);
+      box-shadow: var(--shadow);
       align-items:start;
     }
 
     .thumb{
-      width: 160px; height: 90px;
+      width: 160px;
+      height: 90px;
       border-radius: 12px;
-      border: 1px solid var(--bn72-border);
+      border: 1px solid var(--border);
       object-fit: cover;
-      background: #f2f2f2;
+      background: #f3f4f6;
     }
 
     .meta h3{
       margin: 0 0 6px;
       font-size: 1.05rem;
       line-height: 1.2;
-      color: var(--bn72-text);
+      font-weight: 800;
     }
 
-    .meta .desc{
+    .yt-title{
       margin: 0 0 10px;
-      color: var(--bn72-muted);
+      color: var(--text);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .desc{
+      margin: 0 0 10px;
+      color: var(--muted);
       font-size: .95rem;
     }
 
-    .actions{ display:flex; gap:10px; flex-wrap:wrap; }
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin: 6px 0 0;
+    }
 
     .btn{
       display:inline-block;
       padding: 9px 12px;
       border-radius: 12px;
-      border: 1px solid rgba(90,42,130,.22);
+      border: 1px solid transparent;
       text-decoration:none;
-      color:#fff;
-      background: var(--bn72-purple);
+      color: var(--btnText);
+      background: var(--accent);
+      font-weight: 700;
     }
-    .btn:hover{ background: var(--bn72-purple-2); }
+    .btn:hover{ background: var(--accent2); }
 
     .btn.secondary{
-      color: var(--bn72-purple);
-      background: transparent;
+      background: #ffffff;
+      color: var(--accent);
+      border: 1px solid var(--border);
     }
     .btn.secondary:hover{
-      background: rgba(90,42,130,.08);
-    }
-
-    .pill{
-      display:inline-block;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: .78rem;
-      border: 1px solid rgba(90,42,130,.22);
-      color: var(--bn72-purple);
-      margin: 0 8px 10px 0;
-      background: rgba(90,42,130,.06);
+      border-color: var(--accent);
     }
 
     details{
       margin-top: 10px;
       padding: 10px 12px;
       border-radius: 14px;
-      border: 1px solid var(--bn72-border);
-      background: rgba(90,42,130,.04);
+      border: 1px solid var(--border);
+      background: #fafafa;
     }
-    summary{ cursor:pointer; color: var(--bn72-purple); font-weight: 600; }
+
+    summary{
+      cursor:pointer;
+      color: var(--accent);
+      font-weight: 800;
+    }
 
     .embed{
       margin-top: 10px;
@@ -128,18 +143,25 @@
       width: 100%;
       border: 0;
       border-radius: 12px;
+      background: #000;
     }
 
-    /* ✅ CORRECCIÓN: encabezado y pie con texto blanco */
-    header, footer{ color:#fff !important; }
-    header h1, header p, footer p, footer strong, footer a{ color:#fff !important; }
-
-    /* En modo claro, el borde superior del footer suele verse feo si queda oscuro */
     footer{
       max-width: 1100px;
       margin: 0 auto;
       padding: 18px 14px 30px;
-      border-top: 0 !important;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    /* Opcional: si tu estilos.css pinta el header/nav oscuro,
+       esto fuerza texto legible en blanco */
+    header, nav{
+      background: #ffffff;
+      color: var(--text);
+    }
+    header h1, header p, nav a{
+      color: var(--text);
     }
   </style>
 </head>
@@ -179,78 +201,21 @@
 <main>
   <div class="intro">
     <strong>Cómo usar esta página:</strong> cada tarjeta tiene miniatura + enlace directo.
-    Si querés verlo sin salir del sitio, abrí “Ver aquí” (se despliega el reproductor).
+    Para verlo sin salir del sitio, abrí “Ver aquí” (se despliega el reproductor).
   </div>
 
-  <div class="grid">
-
-    <!-- 1 -->
-    <article class="card">
-      <img class="thumb" src="https://img.youtube.com/vi/VOwN8R1_-aQ/hqdefault.jpg" alt="Miniatura del video VOwN8R1_-aQ">
-      <div class="meta">
-        <span class="pill">Serie</span><span class="pill">PL6tVpGzj0…</span>
-        <h3>Video 1 (VOwN8R1_-aQ)</h3>
-        <p class="desc">Parte de la serie principal. Ideal para seguir en orden y tomar notas de conceptos clave.</p>
-        <div class="actions">
-          <a class="btn" href="https://youtu.be/VOwN8R1_-aQ?list=PL6tVpGzj0fAbfJv5vXTrG7Q6e_7Xn_olK" target="_blank" rel="noopener">Ver en YouTube</a>
-          <a class="btn secondary" href="#v-VOwN8R1_-aQ">Ir al embed</a>
-        </div>
-        <details id="v-VOwN8R1_-aQ">
-          <summary>Ver aquí</summary>
-          <iframe class="embed" src="https://www.youtube.com/embed/VOwN8R1_-aQ" allowfullscreen></iframe>
-        </details>
-      </div>
-    </article>
-
-    <!-- 2 -->
-    <article class="card">
-      <img class="thumb" src="https://img.youtube.com/vi/OzhMaorKvRQ/hqdefault.jpg" alt="Miniatura del video OzhMaorKvRQ">
-      <div class="meta">
-        <span class="pill">Serie</span><span class="pill">PL6tVpGzj0…</span>
-        <h3>Video 2 (OzhMaorKvRQ)</h3>
-        <p class="desc">Continuación del recorrido. Útil para reforzar bases antes de textos difíciles.</p>
-        <div class="actions">
-          <a class="btn" href="https://youtu.be/OzhMaorKvRQ?list=PL6tVpGzj0fAbfJv5vXTrG7Q6e_7Xn_olK" target="_blank" rel="noopener">Ver en YouTube</a>
-          <a class="btn secondary" href="#v-OzhMaorKvRQ">Ir al embed</a>
-        </div>
-        <details id="v-OzhMaorKvRQ">
-          <summary>Ver aquí</summary>
-          <iframe class="embed" src="https://www.youtube.com/embed/OzhMaorKvRQ" allowfullscreen></iframe>
-        </details>
-      </div>
-    </article>
-
-    <!-- ... tu contenido sigue igual desde acá ... -->
-
-  </div>
+  <h2 class="section-title">Serie principal</h2>
+  <div class="grid" id="grid-videos"></div>
 
   <h2 class="section-title">Videos adicionales</h2>
-  <div class="grid">
-    <article class="card">
-      <img class="thumb" src="https://img.youtube.com/vi/e91TqN66fZo/hqdefault.jpg" alt="Miniatura del video e91TqN66fZo">
-      <div class="meta">
-        <span class="pill">Extra</span><span class="pill">PL3wafVp3…</span>
-        <h3>Video extra (e91TqN66fZo)</h3>
-        <p class="desc">Material complementario. Si querés, lo ubicamos luego en la temática exacta (gracia, elección, expiación, etc.).</p>
-        <div class="actions">
-          <a class="btn" href="https://youtu.be/e91TqN66fZo?list=PL3wafVp3xJPTBKd9-6yUnzL2i_qFbQI_x" target="_blank" rel="noopener">Ver en YouTube</a>
-          <a class="btn secondary" href="#v-e91TqN66fZo">Ir al embed</a>
-        </div>
-        <details id="v-e91TqN66fZo">
-          <summary>Ver aquí</summary>
-          <iframe class="embed" src="https://www.youtube.com/embed/e91TqN66fZo" allowfullscreen></iframe>
-        </details>
-      </div>
-    </article>
-  </div>
+  <div class="grid" id="grid-extras"></div>
 
   <h2 class="section-title">Canal recomendado</h2>
   <div class="grid">
     <article class="card">
-      <img class="thumb" src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Canal (miniatura ilustrativa)">
+      <img class="thumb" src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Miniatura ilustrativa del canal">
       <div class="meta">
-        <span class="pill">Canal</span>
-        <h3>Landmark Baptist College — PHIL 3305</h3>
+        <div class="yt-title">Landmark Baptist College — PHIL 3305</div>
         <p class="desc">Canal con clases/series de formación. Útil como apoyo filosófico/teológico (según tu selección de videos).</p>
         <div class="actions">
           <a class="btn" href="https://www.youtube.com/@landmarkbaptistcollegephil3305" target="_blank" rel="noopener">Ir al canal</a>
@@ -258,17 +223,108 @@
       </div>
     </article>
   </div>
-
 </main>
 
 <footer>
   <p><strong>Buenas Nuevas 72</strong> — Banco de vídeos para estudiar con Biblia abierta y criterio.</p>
 </footer>
 
+<script>
+  // Lista tomada de tu página original, pero SIN playlists (solo IDs + descripción).
+  const serie = [
+    { id:"VOwN8R1_-aQ", desc:"Parte de la serie principal. Ideal para seguir en orden y tomar notas de conceptos clave." },
+    { id:"OzhMaorKvRQ", desc:"Continuación del recorrido. Útil para reforzar bases antes de textos difíciles." },
+    { id:"CpTO6hX5FQ4", desc:"Para estudiar con Biblia abierta: anotá premisas, textos y conclusiones." },
+    { id:"t0xiEXAF62M", desc:"Útil para afinar definiciones: gracia, fe, elección, perseverancia, etc." },
+    { id:"P2PdcoMc68w", desc:"Recomendado para contrastar afirmaciones teológicas con el texto bíblico." },
+    { id:"gdvJAoVpQrQ", desc:"Buen apoyo para preparar clases, devocionales o material de estudio." },
+    { id:"WVXHnXNDImk", desc:"Sugerencia: anotá definiciones y comparalas con tu glosario del sitio." },
+    { id:"wM7rVAveQCU", desc:"Para profundizar: útil como “repaso” antes de Romanos 9 / Juan 6." },
+    { id:"QKkeE5U6p7M", desc:"Ideal para estudiar con “mapa mental”: conceptos, textos, conclusiones." },
+    { id:"XSttQexN4Ac", desc:"Útil como material de formación: conceptos claros y aplicables." },
+    { id:"vgvoHVMflz8", desc:"Recomendado para consolidar el marco general antes de entrar a objeciones puntuales." },
+    { id:"NtHfN8umglg", desc:"Útil para repasar puntos donde suelen aparecer “lecturas forzadas” del texto." },
+    { id:"0inOSEYhSKw", desc:"Recomendado para acompañar tu sección “Textos difíciles”." },
+    { id:"NLb-oKMxG1c", desc:"Para repasar doctrinas con lenguaje claro y enfoque bíblico." },
+    { id:"gnScRpaCXls", desc:"Sugerencia: anotá citas bíblicas mencionadas y agregalas a tu glosario." },
+    { id:"gQ3ZFXkpnF8", desc:"Material complementario: ayuda a ordenar ideas y argumentos." },
+    { id:"lCQHJ0f0fno", desc:"Buen recurso para reafirmar un evangelio predicable: llamado real y gracia real." },
+    { id:"PavqTUsa2cU", desc:"Recomendado si estás preparando material para “Gracia y libertad”." },
+    { id:"fRU4V71eunY", desc:"Para repasar y corregir malentendidos frecuentes sobre “gracia” y “mérito”." },
+    { id:"eUwi8unkODY", desc:"Complementario para reforzar categorías soteriológicas y su uso bíblico." },
+    { id:"lMnOEDACA9Q", desc:"Útil para seguir armando tu mapa de argumentos “sin slogans”." },
+    { id:"2S_jrZ-Op50", desc:"Recomendado si estás preparando clases: ordena categorías y textos." },
+    { id:"SFN7AhoZ0e0", desc:"Buen material para discusión: comparar afirmaciones con pasajes bíblicos." },
+    { id:"4zWGMnslNm0", desc:"Complementario para profundizar y evitar simplificaciones." },
+    { id:"C2c-2RsfZQU", desc:"Este video estaba duplicado en tu lista; lo dejé una sola vez." },
+    { id:"7m7WSLWhBN4", desc:"Recomendado para consolidar conclusiones: ¿qué afirma el texto realmente?" },
+    { id:"T5yTbbId5ag", desc:"Ideal para revisar puntos de tensión entre “sistema” y “texto bíblico”." },
+    { id:"OEb6MyfCm-8", desc:"Buen cierre para ordenar definiciones y evitar confusiones terminológicas." },
+    { id:"BOzKRCiRhBU", desc:"Útil para repasar implicancias pastorales: predicación, llamado, consuelo." },
+    { id:"HQpo3Xjv55U", desc:"Recomendado para fortalecer una lectura bíblica llana y consistente." },
+    { id:"7q9ceh76kxA", desc:"Para revisar, sintetizar y anotar ideas aplicables a tu sitio." },
+    { id:"6fmGWXD9gWY", desc:"Buen material de repaso para sostener coherencia doctrinal al enseñar." },
+    { id:"eJDsvofyRKw", desc:"Cierre de la tanda: ideal para armar un resumen en 10 puntos." }
+  ];
+
+  const extras = [
+    { id:"e91TqN66fZo", desc:"Material complementario. Si querés, lo ubicamos luego en la temática exacta (gracia, elección, expiación, etc.)." }
+  ];
+
+  function cardHTML({id, desc}) {
+    const yt = `https://youtu.be/${id}`;
+    const thumb = `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+    const embed = `https://www.youtube.com/embed/${id}`;
+    const detailsId = `v-${id}`;
+
+    return `
+      <article class="card" data-ytid="${id}">
+        <img class="thumb" src="${thumb}" alt="Miniatura del video ${id}">
+        <div class="meta">
+          <h3 class="yt-title" id="t-${id}">Cargando título…</h3>
+          <p class="desc">${desc}</p>
+
+          <div class="actions">
+            <a class="btn" href="${yt}" target="_blank" rel="noopener">Ver en YouTube</a>
+            <a class="btn secondary" href="#${detailsId}">Ver aquí</a>
+          </div>
+
+          <details id="${detailsId}">
+            <summary>Ver aquí (sin salir del sitio)</summary>
+            <iframe class="embed" src="${embed}" allowfullscreen loading="lazy"></iframe>
+          </details>
+        </div>
+      </article>
+    `;
+  }
+
+  function render(list, containerId){
+    const el = document.getElementById(containerId);
+    el.innerHTML = list.map(cardHTML).join("");
+  }
+
+  // Trae el título real desde YouTube usando oEmbed (sin API key)
+  async function hydrateTitles() {
+    const cards = document.querySelectorAll("[data-ytid]");
+    for (const c of cards) {
+      const id = c.getAttribute("data-ytid");
+      const target = document.getElementById(`t-${id}`);
+      try {
+        const oembed = `https://www.youtube.com/oembed?url=${encodeURIComponent("https://www.youtube.com/watch?v=" + id)}&format=json`;
+        const r = await fetch(oembed);
+        if (!r.ok) throw new Error("oEmbed fail");
+        const data = await r.json();
+        target.textContent = data.title || `Video (${id})`;
+      } catch (e) {
+        target.textContent = `Video (${id})`;
+      }
+    }
+  }
+
+  render(serie, "grid-videos");
+  render(extras, "grid-extras");
+  hydrateTitles();
+</script>
+
 </body>
 </html>
-
-
-
-
-

@@ -2,10 +2,114 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Libros sugeridos | Buenas Nuevas 72</title>
-  <link rel="stylesheet" href="css/estilos.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Libros Sugeridos — Buenas Nuevas 72</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+
+  <style>
+    :root{
+      --bn72-bg:#0f0716;
+      --bn72-border:rgba(255,255,255,.10);
+      --bn72-text:rgba(255,255,255,.92);
+      --bn72-muted:rgba(255,255,255,.72);
+    }
+    body{
+      background: radial-gradient(1200px 600px at 20% 10%, rgba(122,59,176,.25), transparent 60%), var(--bn72-bg);
+      color: var(--bn72-text);
+    }
+    main{ max-width: 1100px; margin: 0 auto; padding: 18px 14px 60px; }
+    .intro{
+      margin: 14px 0 18px;
+      padding: 14px;
+      border: 1px solid var(--bn72-border);
+      border-radius: 14px;
+      background: rgba(255,255,255,.04);
+      color: var(--bn72-muted);
+    }
+    .section-title{ margin: 18px 0 10px; font-size: 1.25rem; }
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 10px;
+    }
+    @media(min-width: 880px){
+      .grid{ grid-template-columns: 1fr 1fr; }
+    }
+    .card{
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 14px;
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid var(--bn72-border);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      align-items:start;
+    }
+    .thumb{
+      width: 160px; height: 90px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.14);
+      object-fit: cover;
+      background: rgba(255,255,255,.06);
+    }
+    .meta h3{
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+      line-height: 1.2;
+    }
+    .meta .desc{
+      margin: 0 0 10px;
+      color: var(--bn72-muted);
+      font-size: .95rem;
+    }
+    .actions{ display:flex; gap:10px; flex-wrap:wrap; }
+    .btn{
+      display:inline-block;
+      padding: 9px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.18);
+      text-decoration:none;
+      color:#fff;
+      background: rgba(90,42,130,.35);
+    }
+    .btn:hover{ background: rgba(122,59,176,.45); }
+    .btn.secondary{ background: rgba(255,255,255,.06); }
+    .pill{
+      display:inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: .78rem;
+      border: 1px solid rgba(255,255,255,.14);
+      color: var(--bn72-muted);
+      margin: 0 8px 10px 0;
+      background: rgba(90,42,130,.18);
+    }
+    details{
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+    }
+    summary{ cursor:pointer; color:#fff; }
+    .embed{
+      margin-top: 10px;
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      border: 0;
+      border-radius: 12px;
+    }
+    footer{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 18px 14px 30px;
+      color: var(--bn72-muted);
+      border-top: 1px solid rgba(255,255,255,.10);
+    }
+  </style>
 </head>
+
 <body>
 
 <header>
@@ -364,6 +468,7 @@ El libro también incluye una serie de artículos sobre asuntos cruciales en lo 
   </div>
 </body>
 </html>
+
 
 
 

@@ -186,7 +186,7 @@
 <main>
   <div class="intro">
     <strong>Cómo usar esta página:</strong> cada tarjeta tiene miniatura + enlace directo.
-    Para verlo sin salir del sitio, abrí “Ver en Youtube” (se despliega el reproductor).
+    Para verlo sin salir del sitio, abrí “Ver aquí (sin salir del sitio)”.
   </div>
 
   <h2 class="section-title">Serie principal</h2>
@@ -270,11 +270,12 @@
           <p class="desc">${desc}</p>
 
           <div class="actions">
-            <a class="btn" href="${yt}" target="_blank" rel="noopener">Ver en YouTube</a>
-            <a class="btn secondary" href="#${detailsId}">Ver aquí</a>
+            <a class="btn" href="${yt}" target="_blank" rel="noopener">Ver en YouTube</a>           
           </div>
 
           <details id="${detailsId}">
+
+
             <summary>Ver aquí (sin salir del sitio)</summary>
             <iframe class="embed" src="${embed}" allowfullscreen loading="lazy"></iframe>
           </details>
@@ -313,5 +314,4 @@
 
 </body>
 </html>
-
 
